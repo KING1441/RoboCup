@@ -1,0 +1,36 @@
+const int motorPin1 = 2;
+const int motorPin2 = 3;
+const int motorPin3 = 4;
+const int motorPin4 = 5;
+int Elabel = true; //false or true
+auto L = LOW;
+auto H = HIGH;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(motorPin1, OUTPUT);
+  pinMode(motorPin2, OUTPUT);
+}
+
+void loop() {
+  if(Elabel) {
+    forward();
+  }
+}
+void forward(){
+  digitalWrite(motorPin1, H);
+  digitalWrite(motorPin3, H);
+  digitalWrite(motorPin4, l);
+  digitalWrite(motorPin2, l);
+}
+
+void turnLeft(){
+  digitalWrite(motorPin1, H);
+  digitalWrite(motorPin3, H);
+    
+}
+
+void turnRight(){
+  digitalWrite(motorPin1, L);
+    digitalWrite(motorPin2, H);
+}
