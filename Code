@@ -1,8 +1,8 @@
 const int motorPin1 = 2;
 const int motorPin2 = 3;
-const int motorPin3 = 4;
-const int motorPin4 = 5;
-int Elabel = true; //false or true
+//const int motorPin3 = 4;
+//const int motorPin4 = 5;
+int Enable = true; //false or true
 auto L = LOW;
 auto H = HIGH;
 
@@ -12,25 +12,30 @@ void setup() {
   pinMode(motorPin2, OUTPUT);
 }
 
-void loop() {
-  if(Elabel) {
-    forward();
+void loop() { //TurnRight(); Backward(); Forward(); TurnLeft();
+  if(Enable) {
+    Forward();
   }
 }
-void forward(){
-  digitalWrite(motorPin1, H);
-  digitalWrite(motorPin3, H);
-  digitalWrite(motorPin4, l);
-  digitalWrite(motorPin2, l);
-}
 
-void turnLeft(){
-  digitalWrite(motorPin1, H);
-  digitalWrite(motorPin3, H);
-    
-}
 
-void turnRight(){
-  digitalWrite(motorPin1, L);
-    digitalWrite(motorPin2, H);
+
+
+
+
+void Backward(){
+  digitalWrite(motorPin1,L);
+  digitalWrite(motorPin2,L);
+}
+void Forward(){
+  digitalWrite(motorPin1,H);
+  digitalWrite(motorPin2,H);
+}
+void TurnLeft(){
+  digitalWrite(motorPin1,H);
+  digitalWrite(motorPin2,L);
+}
+void TurnRight(){
+  digitalWrite(motorPin1,L);
+  digitalWrite(motorPin2,H);
 }
